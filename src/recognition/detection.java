@@ -30,8 +30,7 @@ public class detection {
 		 CascadeClassifier faceTemplate = new CascadeClassifier("lbpcascade_frontalface.xml");
 		 
 		
-		 //This mat should ideally be from an android phone over a java socket.
-		 //Get the file from a socket call.
+		 
 		 Mat image = imread("3636984-smiling-young-professional-pointing-at-you.jpg");
 		 
 		 
@@ -42,18 +41,18 @@ public class detection {
 		 System.out.println(String.format("Detected %s faces", faceDetections.toArray().length));
 		 
 		 
-		 	//Draw a bounding box around each face.
+		     //Draw a bounding box around each face.
 		    for (Rect rect : faceDetections.toArray()) 
 		    {
 		        rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
 		    }
 		 
-		    //Robust way of doing things.
+		    
 		    String filename = String.format("newFaceDetectionCreated.jpg");
 		    File file = new File(filename);
 		    filename = file.toString();
 		    
-		  //  System.out.println(String.format("Writing %s", filename));
+		  
 		    imwrite(filename, image);
 		    
 		    //Convert the Mat object to a BufferedImage to display on the jFrame.
